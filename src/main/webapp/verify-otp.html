@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Verify OTP</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background:
+                radial-gradient(circle at top left, #273469, transparent 40%),
+                radial-gradient(circle at bottom right, #4b1d6b, transparent 40%),
+                #080b16;
+
+            color: white;
+        }
+
+        .box {
+
+            width: 400px;
+
+            padding: 45px 40px;
+
+            background: rgba(20, 24, 40, 0.95);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 0 30px rgba(102, 126, 234, 0.25),
+                0 20px 60px rgba(0, 0, 0, 0.6);
+
+            backdrop-filter: blur(15px);
+        }
+
+        h2 {
+
+            text-align: center;
+
+            font-size: 30px;
+
+            margin-bottom: 10px;
+        }
+
+        .welcome {
+
+            text-align: center;
+
+            color: #9da3b8;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+        }
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            color: #d9dcec;
+        }
+
+        input {
+
+            width: 100%;
+
+            padding: 14px 15px;
+
+            margin-bottom: 22px;
+
+            background: #111522;
+
+            color: white;
+
+            border: 1px solid #30364d;
+
+            border-radius: 10px;
+
+            outline: none;
+
+            font-size: 18px;
+
+            text-align: center;
+
+            letter-spacing: 5px;
+        }
+
+        input:focus {
+
+            border-color: #667eea;
+
+            box-shadow:
+                0 0 0 3px rgba(102, 126, 234, 0.15),
+                0 0 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .verify-button {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2
+            );
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .verify-button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .back-login {
+
+            display: block;
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #aeb8ff;
+
+            text-decoration: none;
+
+            font-size: 14px;
+        }
+
+        .back-login:hover {
+
+            color: white;
+
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h2>Verify OTP</h2>
+
+        <p class="welcome">
+            Enter the 6-digit OTP sent to your email address.
+        </p>
+
+        <form action="VerifyOTPServlet" method="post">
+
+            <label>Enter OTP</label>
+
+            <input
+                type="text"
+                name="otp"
+                placeholder="000000"
+                maxlength="6"
+                pattern="[0-9]{6}"
+                required
+            >
+
+            <button
+                type="submit"
+                class="verify-button">
+
+                Verify OTP
+
+            </button>
+
+        </form>
+
+        <a
+            href="login.html"
+            class="back-login">
+
+            ← Back to Login
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>
+

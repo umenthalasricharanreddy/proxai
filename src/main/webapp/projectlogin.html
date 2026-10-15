@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Login Page</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background:
+            radial-gradient(circle at top left, #273469, transparent 40%),
+            radial-gradient(circle at bottom right, #4b1d6b, transparent 40%),
+            #080b16;
+
+        color: white;
+    }
+
+    .box {
+        width: 400px;
+
+        padding: 45px 40px;
+
+        background: rgba(20, 24, 40, 0.95);
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        border-radius: 22px;
+
+        box-shadow:
+            0 0 30px rgba(102, 126, 234, 0.25),
+            0 20px 60px rgba(0, 0, 0, 0.6);
+
+        backdrop-filter: blur(15px);
+
+        animation: boxAppear 0.8s ease;
+    }
+
+    @keyframes boxAppear {
+
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+    h2 {
+        text-align: center;
+
+        font-size: 30px;
+
+        margin-bottom: 8px;
+
+        color: white;
+    }
+
+    .welcome {
+        text-align: center;
+
+        color: #9da3b8;
+
+        font-size: 14px;
+
+        margin-bottom: 32px;
+    }
+
+    label {
+        display: block;
+
+        margin-bottom: 8px;
+
+        font-size: 14px;
+
+        font-weight: bold;
+
+        color: #d9dcec;
+    }
+
+    input {
+        width: 100%;
+
+        padding: 14px 15px;
+
+        margin-bottom: 22px;
+
+        background: #111522;
+
+        color: white;
+
+        border: 1px solid #30364d;
+
+        border-radius: 10px;
+
+        outline: none;
+
+        font-size: 15px;
+
+        transition: 0.3s;
+    }
+
+    input::placeholder {
+        color: #777e95;
+    }
+
+    input:focus {
+
+        border-color: #667eea;
+
+        box-shadow:
+            0 0 0 3px rgba(102, 126, 234, 0.15),
+            0 0 15px rgba(102, 126, 234, 0.2);
+
+        background: #151a2a;
+    }
+
+    .login {
+
+        width: 100%;
+
+        padding: 14px;
+
+        border: none;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+        color: white;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+
+        box-shadow:
+            0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .login:hover {
+
+        transform: translateY(-2px);
+
+        box-shadow:
+            0 12px 25px rgba(102, 126, 234, 0.5);
+    }
+
+    .login:active {
+        transform: translateY(0);
+    }
+
+    /* Forgot Password */
+
+    .forgot-password {
+        display: block;
+
+        text-align: right;
+
+        margin-top: -10px;
+
+        margin-bottom: 22px;
+
+        color: #aeb8ff;
+
+        font-size: 13px;
+
+        text-decoration: none;
+
+        transition: 0.3s;
+    }
+
+    .forgot-password:hover {
+
+        color: white;
+
+        text-decoration: underline;
+    }
+
+    .divider {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin: 25px 0;
+
+        color: #686f86;
+
+        font-size: 12px;
+    }
+
+    .divider::before,
+    .divider::after {
+
+        content: "";
+
+        flex: 1;
+
+        height: 1px;
+
+        background: #30364d;
+    }
+
+    .new-user {
+
+        width: 100%;
+
+        padding: 13px;
+
+        background: transparent;
+
+        color: #aeb8ff;
+
+        border: 1px solid #667eea;
+
+        border-radius: 10px;
+
+        font-size: 15px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .new-user:hover {
+
+        background: #667eea;
+
+        color: white;
+
+        box-shadow:
+            0 8px 20px rgba(102, 126, 234, 0.3);
+
+        transform: translateY(-2px);
+    }
+
+    .bottom-text {
+
+        text-align: center;
+
+        margin-top: 25px;
+
+        color: #686f86;
+
+        font-size: 12px;
+    }
+
+    @media (max-width: 500px) {
+
+        .box {
+
+            width: 90%;
+
+            padding: 35px 25px;
+        }
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Welcome Back</h2>
+
+    <p class="welcome">
+        Login to continue to your account
+    </p>
+
+    <form action="LoginServlet" method="post">
+
+        <label>Username</label>
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+        >
+
+        <a
+            href="forgot-password.html"
+            class="forgot-password">
+            Forgot Password?
+        </a>
+
+        <button type="submit" class="login">
+            Login
+        </button>
+
+    </form>
+
+    <div class="divider">
+        OR
+    </div>
+
+    <button
+        type="button"
+        class="new-user"
+        onclick="window.location.href='register.html'">
+
+        Create New Account
+
+    </button>
+
+    <p class="bottom-text">
+        Secure User Authentication System
+    </p>
+
+</div>
+
+</body>
+
+</html>
+

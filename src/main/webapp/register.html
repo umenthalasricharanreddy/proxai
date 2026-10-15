@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>New User Registration</title>
+
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    register-box {
+        width: 400px;
+        background: white;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 25px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 11px;
+        margin-bottom: 18px;
+        border: 1px solid #ccc;
+        border-radius: 7px;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+
+    input:focus,
+    select:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+
+    .register-btn {
+        width: 100%;
+        padding: 12px;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .register-btn:hover {
+        background: #5568d8;
+    }
+
+    .back-btn {
+        display: block;
+        margin: 15px auto 0;
+        padding: 10px 25px;
+        background: white;
+        color: #667eea;
+        border: 2px solid #667eea;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+
+    .back-btn:hover {
+        background: #667eea;
+        color: white;
+    }
+</style>
+
+</head>
+
+<body>
+
+
+<div class="register-box">
+
+    <h2>New User Registration</h2>
+
+    <form action="register" method="post">
+
+        <label>Name</label>
+        <input type="text"
+               name="name"
+               placeholder="Enter your name"
+               required>
+
+        <label>Gender</label>
+        <select name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+       <label>Password</label>
+        <input type="password"
+               name="password"
+               placeholder="Enter password"
+               required>
+
+        <label>Phone Number</label>
+        <input type="tel"
+               name="phone"
+               placeholder="Enter phone number"
+               required>
+
+        <label>Email</label>
+        <input type="email"
+               name="email"
+               placeholder="Enter email"
+               required>
+
+        <button type="submit" class="register-btn">
+            Register
+        </button>
+
+    </form>
+
+    <button type="button"
+            class="back-btn"
+            onclick="window.location.href='projectlogin.html'">
+        Back to Login
+    </button>
+
+</div>
+
+
+</body>
+</html>

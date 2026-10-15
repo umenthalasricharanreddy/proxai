@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>User Dashboard</title>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background:
+            radial-gradient(circle at top left, #273469, transparent 40%),
+            radial-gradient(circle at bottom right, #4b1d6b, transparent 40%),
+            #080b16;
+
+        color: white;
+    }
+
+    /* Dashboard Container */
+
+    .dashboard {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 20px;
+    }
+
+    /* Dashboard Card */
+
+    .card {
+        width: 480px;
+
+        padding: 50px 40px;
+
+        text-align: center;
+
+        background: rgba(20, 24, 40, 0.95);
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        border-radius: 22px;
+
+        box-shadow:
+            0 0 30px rgba(102, 126, 234, 0.25),
+            0 20px 60px rgba(0, 0, 0, 0.6);
+
+        backdrop-filter: blur(15px);
+
+        animation: cardAppear 0.8s ease;
+    }
+
+    /* Card Animation */
+
+    @keyframes cardAppear {
+
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+    /* Heading */
+
+    .card h1 {
+        color: white;
+
+        font-size: 32px;
+
+        margin-bottom: 15px;
+    }
+
+    /* Description */
+
+    .card p {
+        color: #9da3b8;
+
+        font-size: 16px;
+
+        margin-bottom: 35px;
+
+        line-height: 1.6;
+    }
+
+    /* Buttons */
+
+    .buttons {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .buttons button {
+        width: 100%;
+
+        padding: 14px;
+
+        border: none;
+
+        border-radius: 10px;
+
+        color: white;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+
+        background: linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+        box-shadow:
+            0 8px 20px rgba(102, 126, 234, 0.25);
+    }
+
+    /* View Profile */
+
+    .profile {
+        background: linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+    }
+
+    /* Logout */
+
+    .logout {
+        background: linear-gradient(
+            135deg,
+            #ff512f,
+            #dd2476
+        );
+    }
+
+    /* Button Hover */
+
+    .buttons button:hover {
+        transform: translateY(-3px);
+
+        box-shadow:
+            0 12px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .logout:hover {
+        box-shadow:
+            0 12px 25px rgba(255, 81, 47, 0.35);
+    }
+
+    /* Button Click */
+
+    .buttons button:active {
+        transform: translateY(0);
+    }
+
+    /* Bottom Text */
+
+    .bottom-text {
+        margin-top: 28px;
+
+        color: #686f86;
+
+        font-size: 12px;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 500px) {
+
+        .card {
+            width: 90%;
+
+            padding: 40px 25px;
+        }
+
+        .card h1 {
+            font-size: 27px;
+        }
+
+    }
+
+</style>
+</head>
+
+<body>
+<div class="dashboard">
+
+    <div class="card">
+
+        <h1>Welcome User</h1>
+
+        <p>
+            You have successfully logged in.
+            <br>
+            Welcome to your dashboard.
+        </p>
+
+        <div class="buttons">
+
+            <!-- View Profile -->
+
+            <button
+                class="profile"
+                onclick="window.location.href='ProfileServlet'">
+
+                View Profile
+
+            </button>
+
+            <!-- Logout -->
+
+            <button
+                class="logout"
+                onclick="window.location.href='LogoutServlet'">
+
+                Logout
+
+            </button>
+
+        </div>
+
+        <p class="bottom-text">
+            Secure User Authentication System
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
